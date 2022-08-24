@@ -19,6 +19,7 @@ A customer wants a high-fidelity and low-latency audio equalizer running on an F
 2. 48 kHz sampling rate
 3. Audio latency of under 15 milliseconds
 4. 8 filters to fine-tune frequency response
+5. Easy to use user interface
 
 ## Workshop Outline
 
@@ -28,4 +29,5 @@ Much of the work on the FPGA has been done already. The students must implement 
 2. Generalize the filter structure so that each of the 8 filters can store their unique taps
 3. Utilize the "generate" keyword and pipelinig to implement the generic FIR structure with VHDL and use a VHDL benchtest to verify functionality
 4. Implement and test FIFO buffer with VHDL to act as input to filter structures
-4. Integrate the FIR filter into the larger design and verify functionality using audio test
+5. Implement variable gain amplifiers
+6. Integrate the FIR filter into the larger design and verify functionality using audio test
