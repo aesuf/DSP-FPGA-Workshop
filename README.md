@@ -29,5 +29,5 @@ Much of the work on the FPGA has been done already. The students must implement 
 2. Generalize the filter structure so that each of the 8 filters can store their unique taps
 3. Utilize the "generate" keyword and pipelinig to implement the generic FIR structure with VHDL and use a VHDL benchtest to verify functionality
 4. Implement and test FIFO buffer with VHDL to act as input to filter structures
-5. Implement variable gain amplifiers
+5. Implement variable gain amplifiers with VHDL
 6. Integrate the FIR filter into the larger design and verify functionality using audio test
