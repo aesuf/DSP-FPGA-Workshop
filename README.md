@@ -7,9 +7,10 @@ This directory holds all the necessary information for the DSP on FPGA Workshop,
 The purpose of this workshop is to introduce to students how to:
 
 1. Correctly design and simulate DSP solutions that have desirable filter properties and resource constraints
-2. Map a DSP solution to a hardware platform using symmetries in filter structures
-3. Implement DSP solution on an FPGA using VHDL and concepts such as fixed-point math and pipelining
-4. Test the functionality of the solution using VHDL benchtests and benchtop testing
+2. Understand differences in signal properties between FIR and IIR filters and when one or the other should be used
+3. Map a DSP solution to a hardware platform using symmetries in filter structures
+4. Implement DSP solution on an FPGA using VHDL and concepts such as fixed-point math and pipelining
+5. Test the functionality of the solution using VHDL benchtests and benchtop testing
 
 ## Problem Statement
 
@@ -31,3 +32,7 @@ Much of the work on the FPGA has been done already. The students must implement 
 4. Implement and test FIFO buffer with VHDL to act as input to filter structures
 5. Implement variable gain amplifiers with VHDL
 6. Integrate the FIR filter into the larger design and verify functionality using audio test
+
+## References
+
+This workshop was based off the following webpage: https://www.controlpaths.com/2021/06/28/audio-equalizer-based-on-fir-filters/
