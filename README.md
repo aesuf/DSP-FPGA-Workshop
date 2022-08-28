@@ -1,6 +1,6 @@
 # DSP-on-FPGA Workshop
 
-This directory holds all the necessary information for the DSP on FPGA Workshop, which uses a DSP on an FPGA to implement an audio equalizer.
+This directory holds all the necessary information for the DSP-on-FPGA Workshop, which uses a DSP on an FPGA to implement an audio equalizer.
 
 ## Motivation
 
@@ -19,8 +19,10 @@ A customer wants a high-fidelity and low-latency audio equalizer running on an F
 1. 12-bit audio
 2. 48 kHz sampling rate
 3. Audio latency of under 15 milliseconds
-4. 8 filters to fine-tune frequency response
-5. Easy to use user interface
+4. 8 filters to fine-tune frequency response (cutoffs: 0 Hz, 125 Hz, 250 Hz, 500 Hz, 1000 Hz, 2000 Hz, 4000 Hz, 8000 Hz)
+5. Filter magnitude response adjustable between -12 dB and 12 dB
+6. Passband ripple not exceeding 1 dB
+6. Easy to use user interface
 
 ## Workshop Outline
 
@@ -35,4 +37,5 @@ Much of the work on the FPGA has been done already. The students must implement 
 
 ## References
 
-This workshop was based off the following webpage: https://www.controlpaths.com/2021/06/28/audio-equalizer-based-on-fir-filters/
+* This workshop was based off the following webpage: https://www.controlpaths.com/2021/06/28/audio-equalizer-based-on-fir-filters/
+* The following was used as reference for the equalizer design: https://s2.smu.edu/~cd/EE2170/Labs/EQ.htm
