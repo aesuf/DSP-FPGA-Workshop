@@ -19,18 +19,25 @@ package user_pkg is
 	constant SYS_CLK		: positive := 10000000;
    
 	-- Application specific constraints
+	constant ACC_DATA_SIZE	: positive := 64;
 	constant DATA_SIZE		: positive := 16;
 	constant FILTER_COUNT	: positive := 6;
-	constant FILTER_DEPTH	: positive := 512;
+	constant FILTER_DEPTH	: positive := 641;		-- must be odd value, assumes filters all same size
 	constant SAMPLE_RATE	: positive := 48000;
+	constant QUANTIZE_MAX	: positive := 8;		-- max value by which output is normalized
+	constant QUANTIZE_MIN	: positive := 16777216; -- any very large value within range
 	
 	-- Calculated values (DON'T EDIT)
-	constant DELAY	: positive := integer(ceil(log2(real(FILTER_DEPTH))));
+	constant ADDER_STAGE_DATA_SIZE	: positive := ADC_DATA_SIZE + 1;
+	constant ADDER_STAGE_DELAY		: positive := 2;
+	constant FIFO_OUT_DEPTH			: positive := (FILTER_DEPTH - 1) / 2 + 1;
+	constant QUANTIZE_DEFAULT		: positive := 2**DATA_SIZE;
 	
-	subtype ADC_DATA_RANGE	is natural range ADC_DATA_SIZE-1 downto 0;
-	subtype DATA_RANGE		is natural range DATA_SIZE-1 downto 0;
-	subtype TREE_OUT_RANGE	is natural range DATA_SIZE + 2 + integer(ceil(log2(real(FILTER_DEPTH)))) - 1 downto 0;
+	subtype ADC_DATA_RANGE			is natural range ADC_DATA_SIZE-1 downto 0;
+	subtype FIRST_ADDER_STAGE_RANGE	is natural range ADDER_STAGE_DATA_SIZE-1 downto 0;
+	subtype DATA_RANGE				is natural range DATA_SIZE-1 downto 0;
 	
-	type BUFF_ARR		is array (0 to FILTER_DEPTH-1) of std_logic_vector(DATA_RANGE);
+	type FIFO_OUT			is array (0 to FIFO_OUT_DEPTH-1) of std_logic_vector(ADC_DATA_RANGE);
+	type ADDER_STAGE_OUT	is array (0 to FIFO_OUT_DEPTH-1) of std_logic_vector(FIRST_ADDER_STAGE_RANGE);
 
 end user_pkg;
