@@ -37,9 +37,9 @@ package user_pkg is
 	
 	subtype ACC_DATA_RANGE			is natural range ACC_DATA_SIZE-1 downto 0;
 	subtype ADC_DATA_RANGE			is natural range ADC_DATA_SIZE-1 downto 0;
-	subtype DATA_RANGE				is natural range DATA_SIZE-1 downto 0;
 	subtype FIFO_DATA_RANGE			is natural range FIFO_DATA_SIZE-1 downto 0;
 	subtype FIRST_ADDER_STAGE_RANGE	is natural range ADDER_STAGE_DATA_SIZE-1 downto 0;
+	subtype DATA_RANGE				is natural range DATA_SIZE-1 downto 0;
 	subtype MULT_DATA_RANGE			is natural range MULT_DATA_SIZE-1 downto 0;
 	
 	type ADDER_STAGE_OUT	is array (0 to FIFO_OUT_DEPTH-1) of std_logic_vector(FIRST_ADDER_STAGE_RANGE);
